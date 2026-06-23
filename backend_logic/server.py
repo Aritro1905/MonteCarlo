@@ -2,13 +2,13 @@ import os
 import time
 from fastapi import FastAPI
 from pydantic import BaseModel, validator
-from brain import QuantAgent
+from backend_logic.brain import QuantAgent
 
 ucrt64_bin_path = r"C:\msys64\ucrt64\bin"
 if hasattr(os, 'add_dll_directory'):
     os.add_dll_directory(ucrt64_bin_path)
 
-import hedge_core
+import backend_logic.hedge_core as hedge_core
 
 app = FastAPI(title="Hedge-Mind Quant API")
 agent = QuantAgent() # start brain

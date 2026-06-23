@@ -2,7 +2,7 @@ import os
 ucrt64_bin_path = r"C:\msys64\ucrt64\bin"
 if hasattr(os, 'add_dll_directory'):
     os.add_dll_directory(ucrt64_bin_path)
-import hedge_core
+import backend_logic.hedge_core as hedge_core
 import time
 
 print("Initializing Python-to-C++ Bridge...")
